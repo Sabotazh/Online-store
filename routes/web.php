@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/admin', [AdminHomeController::class, 'index'])->name("admin.home.index");
+
 Route::get('/admin/products', [AdminProductController::class, 'index'])->name("admin.product.index");
+Route::post('/admin/products/store', [AdminProductController::class, 'store'])->name("admin.product.store");
 
 Route::get('/', [HomeController::class, 'index'])->name("home.index");
 Route::get('/about', [HomeController::class, 'about'])->name("home.about");

@@ -17,6 +17,16 @@ class Product extends Model
      * $this->attributes['updated_at']  - timestamp - contains the product update date
      */
 
+    /*
+//        Another product store alternative
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'image',
+    ];
+    */
+
     public function getId()
     {
         return $this->attributes['id'];

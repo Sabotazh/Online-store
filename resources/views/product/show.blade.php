@@ -5,7 +5,7 @@
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ asset('/img/'.$viewData["product"]->getImage()) }}"
+                <img src="{{ asset('/storage/'.$viewData["product"]->getImage()) }}"
                      class="img-fluid rounded-start"
                      alt="{{ $viewData["product"]->getName() }}">
             </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
 {
@@ -34,12 +35,14 @@ class AdminProductController extends Controller
         $newProduct->setImage("game.png");
         $newProduct->save();
 
-        /*
-//        Another product store alternative
-        $creationData = $request->only(["name", "description", "price"]);
-        $creationData["image"] = "game.png";
-        Product::create($creationData);
-        */
+        if ($request->hasFile('image')) {
+            $imageName = $newProduct->getId().".".$request->file('image')->extension();
+            Storage::disk('public')->put(
+                $imageName,file_get_contents($request->file('image')->getRealPath())
+            );
+            $newProduct->setImage($imageName);
+            $newProduct->save();
+        }
 
         return back();
     }

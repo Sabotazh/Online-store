@@ -9,6 +9,10 @@
 * Laravel **9.18.0**
 * PHP **8.1.7**
 
+### Quote
+Leave the campground cleaner than you found it.<br>
+_(2008 - Martin, R. C. - Clean Code)_
+
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
